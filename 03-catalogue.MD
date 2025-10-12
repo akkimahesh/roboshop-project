@@ -114,11 +114,13 @@ vim /etc/yum.repos.d/mongo.repo
 ```
 
 ```
-[mongodb-org-4.2]
+[mongodb-org-8.0]
 name=MongoDB Repository
-baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.2/x86_64/
-gpgcheck=0
+baseurl=https://repo.mongodb.org/yum/amazon/2023/mongodb-org/8.0/x86_64/
+gpgcheck=1
 enabled=1
+gpgkey=https://pgp.mongodb.com/server-8.0.asc
+
 ```
 ```
 dnf install mongodb-org-shell -y
@@ -127,7 +129,7 @@ dnf install mongodb-org-shell -y
 Load Schema
 
 ```
-mongo --host MONGODB-SERVER-IPADDRESS </app/schema/catalogue.js
+mongosh --host 172.31.24.8 < /app/schema/catalogue.js
 ```
 
 **NOTE: You need to update catalogue server ip address in frontend configuration. Configuration file is /etc/nginx/default.d/roboshop.conf**
