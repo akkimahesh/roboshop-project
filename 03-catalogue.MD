@@ -123,7 +123,7 @@ gpgkey=https://pgp.mongodb.com/server-8.0.asc
 
 ```
 ```
-dnf install mongodb-org-shell -y
+sudo yum install -y mongodb-org
 ```
 
 Load Schema
